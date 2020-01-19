@@ -97,12 +97,9 @@ void test_binsearch_with_null_list() {
 /*********************************** RUN TESTS ****************************/
 int main(){
 
-    /* Indicate your setup (before) and teardown (after) functions. */
     before(set_up);
     after(teardown);
 
-    /* For each test you'd like to run, call run() with the name of the test 
-     * function to run. */
     run(test_binsearch_with_small_list);
     run(test_binsearch_with_nonexistent_item);
     run(test_binsearch_with_long_list);
