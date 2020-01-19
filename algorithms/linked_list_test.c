@@ -21,7 +21,8 @@ void setup() {
 
 void teardown() {
     free(test_node);
-    free(test_list);
+    free_list(test_list);
+    free_list(list2);
 }
 
 

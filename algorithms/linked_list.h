@@ -134,5 +134,24 @@ int list_search(list_t *list, char *key) {
     return (node == NULL) ? -1 : node->value;
 }
 
+/* Frees the memory allocated to the linked list and each of its nodes. */
+void free_list(list_t *list) {
+    if (list == NULL) {
+        return;
+    }
+
+    if (list->head != NULL) {
+        node_t *node = list->head;
+        node_t *previous = node;
+        while (node->next != NULL) {
+            previous = node;
+            node = node->next;
+            free(previous);
+        }
+        free(node);
+    }
+    free(list);
+}
+        
 
 #endif

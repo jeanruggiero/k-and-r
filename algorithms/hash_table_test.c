@@ -1,15 +1,20 @@
-/* This file contains an implementation of a hash table data structure. It
- * relies on the linked list implementation I created in linked_list.h. Each
- * element in the hash table's data array is a pointer. If no data is stored in
- * the array location, the pointer is NULL. If data is added at that location, a
- * linked list is created and the array location is pointed to the newly created
- * list. Collisions are handled by adding the item to the front of the linked
- * list. */
-
 #include <stdlib.h>
-#include "linked_list.h"
+#include "lighthouse.h"
 
-/* Defines a dict type, which is implemented as a hash table. This hash table
+/* Defines a node data type. */
+typedef struct node {
+    int data;
+    struct node *next;
+} node_t;
+
+/* Defines a linked list type. */
+typedef struct linked_list {
+    int size;
+    node_t *head;
+    node_t *tail;
+} list_t;
+
+/* Defines a dict type, which is implemented as a hash table. This has table
  * only stores integer data. Each element in the table is a pointer to a linked
  * list, so that it handles collisions. */
 typedef struct dict {
@@ -18,6 +23,15 @@ typedef struct dict {
     list_t *data;
 } dict_t;
 
+/* Creates a new node. */
+node_t *create_node(int data, node_t *next) {
+    return NULL;
+}
+
+/* Creates a new linked list. */
+list_t *create_list() {
+    return NULL;
+}
 
 /* Creates a new hash table of the specified capacity. */
 dict_t *create_hash(int capacity) {
@@ -40,11 +54,6 @@ dict_t *create_hash(int capacity) {
 /* Returns the load factor of a hash table. */
 int hash_load_factor(dict_t *dict) {
     return 0;
-}
-
-/* Hash function to map keys to list indices. */
-int hash(char *key) {
-    return 9999;
 }
 
 /* Rehashes a hash table, doubling it in size and rehashing each element. */
